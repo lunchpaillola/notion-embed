@@ -1,23 +1,33 @@
-import logo from './logo.svg';
+import { useState, useEffect } from 'react';
+
+// We installed earlier. This will render content data fetched from the Notion.
+import { NotionRenderer } from 'react-notion';
+
+// For styling markdown content
+import 'react-notion/src/styles.css';
 import './App.css';
 
-function App() {
+function App({ domElement }) {
+  const [data, setData] = useState({});
+  const pageID = domElement.getAttribute("data-pageid")
+
+  useEffect(() => {
+    // notion-api-worker
+    fetch(
+      'https://notion-api.splitbee.io/v1/page/'+pageID
+    )
+      .then((res) => res.json())
+      .then((data) => setData(data));
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>
+        Notion Widget
+      </h1>
+
+      {/* Mount NotionRenderer and pass in data to render */}
+      <NotionRenderer blockMap={data} />
     </div>
   );
 }
