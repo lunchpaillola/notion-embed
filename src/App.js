@@ -15,7 +15,6 @@ function App({ domElement }) {
 
   return (
     <div className="App">
-      <h1>Notion Widget</h1>
       <NotionRenderer blockMap={data} />
     </div>
   );
