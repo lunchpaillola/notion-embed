@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/notion-embed/static/css/main.506e6522.css",
-    "main.js": "/notion-embed/static/js/main.97f6aaee.js",
+    "main.js": "/notion-embed/static/js/main.13271911.js",
     "index.html": "/notion-embed/index.html",
     "main.506e6522.css.map": "/notion-embed/static/css/main.506e6522.css.map",
-    "main.97f6aaee.js.map": "/notion-embed/static/js/main.97f6aaee.js.map"
+    "main.13271911.js.map": "/notion-embed/static/js/main.13271911.js.map"
   },
   "entrypoints": [
     "static/css/main.506e6522.css",
-    "static/js/main.97f6aaee.js"
+    "static/js/main.13271911.js"
   ]
 }
